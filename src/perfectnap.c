@@ -126,7 +126,7 @@ void window_load(Window *window) {
 void window_unload(Window *window) {
   // Destroy the menu layer
 
-  menu_layer_destroy(menu_layer);
+  // menu_layer_destroy(menu_layer);
   
 }
 
