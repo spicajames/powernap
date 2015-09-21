@@ -28,25 +28,25 @@ void handle_tick(struct tm *tick_time, TimeUnits units_changed);
 
 static void generate_image(Window *window, int image){
 
-	if(ready != NULL){
-		gbitmap_destroy(ready);
-	}
+	// if(ready != NULL){
+	// 	gbitmap_destroy(ready);
+	// }
 
-	if(calm != NULL){
-		gbitmap_destroy(calm);
-	}
+	// if(calm != NULL){
+	// 	gbitmap_destroy(calm);
+	// }
 
-	if(napping != NULL){
-		gbitmap_destroy(napping);
-	}
+	// if(napping != NULL){
+	// 	gbitmap_destroy(napping);
+	// }
 
-	if(wakeup != NULL){
-		gbitmap_destroy(wakeup);
-	}
+	// if(wakeup != NULL){
+	// 	gbitmap_destroy(wakeup);
+	// }
 
-	if(image_layer != NULL){
-		bitmap_layer_destroy(image_layer);
-	}
+	// if(image_layer != NULL){
+	// 	bitmap_layer_destroy(image_layer);
+	// }
 
 	Layer *window_layer = window_get_root_layer(window);
 	GRect bounds = layer_get_frame(window_layer);
