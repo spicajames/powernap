@@ -16,6 +16,7 @@ static int last_z = 0;
 
 static bool nap_counter_ready = false;
 static bool init_counter_ready = true;
+static bool img_loaded = false;
 
 static BitmapLayer *image_layer;
 
@@ -28,20 +29,24 @@ void handle_tick(struct tm *tick_time, TimeUnits units_changed);
 
 static void generate_image(Window *window, int image){
 
-	if(ready != NULL){
+	if(ready != NULL && !img_loaded){
 		gbitmap_destroy(ready);
+		img_loaded = false;
 	}
 
-	if(calm != NULL){
+	if(calm != NULL && !img_loaded){
 		gbitmap_destroy(calm);
+		img_loaded = false;
 	}
 
-	if(napping != NULL){
+	if(napping != NULL && !img_loaded){
 		gbitmap_destroy(napping);
+		img_loaded = false;
 	}
 
-	if(wakeup != NULL){
+	if(wakeup != NULL && !img_loaded){
 		gbitmap_destroy(wakeup);
+		img_loaded = false;
 	}
 
 	if(image_layer != NULL){
@@ -56,18 +61,22 @@ static void generate_image(Window *window, int image){
 		case 0:
 			ready = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
 			bitmap_layer_set_bitmap(image_layer, ready);
+			img_loaded = true;
 			break;
 		case 1:
 			calm = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
 			bitmap_layer_set_bitmap(image_layer, calm);
+			img_loaded = true;
 			break;
 		case 2:
 			napping = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_3);
 			bitmap_layer_set_bitmap(image_layer, napping);
+			img_loaded = true;
 			break;
 		case 3:
 			wakeup = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_4);
 			bitmap_layer_set_bitmap(image_layer, wakeup);
+			img_loaded = true;
 			break;
 	}
 
@@ -181,8 +190,8 @@ static void window_unload(Window *window) {
 	}
 	
 	accel_data_service_unsubscribe();
-	// text_layer_destroy(text_layer);
-	// window_destroy(window_timer);
+	text_layer_destroy(text_layer);
+	window_destroy(window_timer);
 	tick_timer_service_unsubscribe();
     init_counter = 0;
     nap_counter = 0;
