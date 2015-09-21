@@ -51,7 +51,7 @@ static void generate_image(Window *window, int image){
 
 	if(image_layer != NULL){
 		bitmap_layer_destroy(image_layer);
-		img_loaded = false;
+		//img_loaded = false;
 	}
 
 	Layer *window_layer = window_get_root_layer(window);
@@ -172,22 +172,27 @@ static void window_unload(Window *window) {
 
 	if(ready){
 		gbitmap_destroy(ready);
+		img_loaded = false;
 	}
 
 	if(calm){
 		gbitmap_destroy(calm);
+		img_loaded = false;
 	}
 
 	if(napping){
 		gbitmap_destroy(napping);
+		img_loaded = false;
 	}
 
 	if(wakeup){
 		gbitmap_destroy(wakeup);
+		img_loaded = false;
 	}
 
 	if(image_layer){
 		bitmap_layer_destroy(image_layer);
+		img_loaded = false;
 	}
 	
 	accel_data_service_unsubscribe();
