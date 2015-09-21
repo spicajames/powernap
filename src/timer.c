@@ -51,6 +51,7 @@ static void generate_image(Window *window, int image){
 
 	if(image_layer != NULL){
 		bitmap_layer_destroy(image_layer);
+		img_loaded = false;
 	}
 
 	Layer *window_layer = window_get_root_layer(window);
