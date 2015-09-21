@@ -116,16 +116,16 @@ void handle_tick(struct tm *tick_time, TimeUnits units_changed)
 {
 	switch(nap_time_selection){
 		case 0:
-			nap_time = 900;
+			nap_time = 1200;
 			break;
 		case 1:
-			nap_time = 1800;
+			nap_time = 10800;
 			break;
 		case 2:
-			nap_time = 3600;
+			nap_time = 16200;
 			break;
 		case 3:
-			nap_time = 5400;
+			nap_time = 21600;
 			break;
 	}
 	
