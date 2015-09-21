@@ -1,16 +1,15 @@
 {
-  "uuid": "78eb4b89-51a6-4e8e-ba52-1898e0984a19",
-  "shortName": "PowerNap",
-  "longName": "PowerNap",
-  "companyName": "Codeconut",
-  "versionCode": 1,
-  "versionLabel": "1.0.3",
+  "uuid": "9109bad7-70d2-4f3c-b776-4ef78929d68b",
+  "shortName": "PolyNap",
+  "longName": "Polyphasic Nap Timer",
+  "companyName": "Codeconut/Ten34Design",
+  "sdkVersion": "3",
+  "versionLabel": "0.1",
   "watchapp": {
     "watchface": false
   },
-  "appKeys": {
-    "dummy": 0
-  },
+  "appKeys": {},
+  "targetPlatforms": ["aplite", "basalt"],
   "resources": {
     "media": [
     {
