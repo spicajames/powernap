@@ -151,5 +151,5 @@ int main(void) {
   init();
   app_event_loop();
   deinit();
-  window_destroy(window);
+  // window_destroy(window);
 }
