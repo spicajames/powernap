@@ -36,7 +36,7 @@ static int16_t menu_get_header_height_callback(MenuLayer *menu_layer, uint16_t s
 
 // Here we draw what each header is
 static void menu_draw_header_callback(GContext* ctx, const Layer *cell_layer, uint16_t section_index, void *data) {
-    menu_cell_basic_header_draw(ctx, cell_layer, "Long of your nap");
+    menu_cell_basic_header_draw(ctx, cell_layer, "Sleep Length");
 }
 
 // This is the menu item draw callback where you specify what each item should look like
@@ -45,21 +45,21 @@ static void menu_draw_row_callback(GContext* ctx, const Layer *cell_layer, MenuI
       switch (cell_index->row) {
         case 0:
           // This is a basic menu item with a title and subtitle
-          menu_cell_basic_draw(ctx, cell_layer, "15 minutes", "Boost your alertness", NULL);
+          menu_cell_basic_draw(ctx, cell_layer, "20 minutes", "Nap", NULL);
           break;
 
         case 1:
           // This is a basic menu item with a title and subtitle
-          menu_cell_basic_draw(ctx, cell_layer, "30 minutes", "Restore wakefulness", NULL);
+          menu_cell_basic_draw(ctx, cell_layer, "3 Hours", "Everyman 3", NULL);
           break;
 
         case 2:
           // This is a basic menu item with a title and subtitle
-          menu_cell_basic_draw(ctx, cell_layer, "60 minutes", "Improve your memory", NULL);
+          menu_cell_basic_draw(ctx, cell_layer, "4.5 Hours", "Everyman 2", NULL);
           break;
         case 3:
           // This is a basic menu item with a title and subtitle
-          menu_cell_basic_draw(ctx, cell_layer, "90 minutes", "Refresh your creativity", NULL);
+          menu_cell_basic_draw(ctx, cell_layer, "6 Hours", "Everyman", NULL);
           break;
       }
 }
