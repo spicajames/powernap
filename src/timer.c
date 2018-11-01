@@ -157,7 +157,7 @@ void handle_tick(struct tm *tick_time, TimeUnits units_changed)
     	nap_counter += 1;
     	generate_image(window_timer, 2);
     	if(nap_counter > nap_time){
-    		vibes_long_pulse();
+    		vibes_short_pulse();
     		generate_image(window_timer, 3);
     	}
     }
